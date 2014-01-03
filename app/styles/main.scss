@@ -1,0 +1,26 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
+@import "header";
+@import "mainPage";
+@import "footer";
+
+/* Put your CSS here */
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.no-margin{
+	margin : 0; 
+}
+.margin-20{
+	margin-left : 20px; 
+}
+/*.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12,{
+	margin-left : 0; 
+}*/
+	

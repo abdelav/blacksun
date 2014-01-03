@@ -1,0 +1,31 @@
+.adds{
+	background : #000;
+	height     : 150px; 
+	margin-top : -20px;  
+}
+.sale-adds{
+	//height : 600px; 
+}
+
+.adds-two{
+	background : #000;
+	height     : 150px; 	
+}
+
+.loadmore{
+	position   : absolute;
+	color      : #f7ed34;
+	background : rgba(0,0,0,0.5);
+	margin     : -50px 0 0 24%;
+	padding    : 8px; 
+	border     : solid 1px #f7ed34;
+	font-size  : 18px;
+	&:hover{
+		-webkit-transition : all 0.3s linear;
+    -moz-transition    : all 0.3s linear;
+    -o-transition      : all 0.3s linear;
+    transition         : all 0.3s linear;
+		background : rgba(0,0,0,1);
+		cursor     : pointer;
+	}
+}

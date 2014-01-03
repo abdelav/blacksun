@@ -1,0 +1,61 @@
+.header{
+	.black-line{
+		height     : 20px;
+		width      : 100%;
+		background : #000;
+		a{
+			color : #fff;
+		}
+		.log-in{
+			background    : #5a5a5a;
+			height        : 25px; 
+			padding-left  : 5px;
+			padding-right : 5px; 
+			li{
+				padding         : 0; 
+				cursor          : pointer;
+				color           : #fff;
+				&:hover{
+					text-decoration : underline;
+				} 
+			}
+			&:hover{
+				-webkit-transition   : all 0.3s linear;
+    			-moz-transition    : all 0.3s linear;
+    			-o-transition      : all 0.3s linear;
+    			transition         : all 0.3s linear;
+				background         : #000; 
+				li{
+					color : #f7ed34;
+				} 
+			}
+		}   
+	}
+	.logo-head{
+		.logo-menu{
+			font-size : 20px;
+			margin    : 70px 0 0 10px; 
+			a{
+				color : black;
+				&:hover{
+					-webkit-transition : all 0.3s linear;
+    			-moz-transition    : all 0.3s linear;
+    			-o-transition      : all 0.3s linear;
+    			transition         : all 0.3s linear;
+    			color              : #5a5a5a;
+				}
+			}  
+		}
+		.logo{
+			margin-top : 10px; 
+		}
+		.search-cart{
+			margin : 50px 0 0 50px; 
+		}
+	}
+	.yellow-line{
+		height     : 50px;
+		width      : 100%;
+		background : #f7ed34;
+	}
+}
