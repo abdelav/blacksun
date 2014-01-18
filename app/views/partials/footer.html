@@ -3,17 +3,24 @@
 		<div class="row">
 			<div class="span4 news-letter">
 				<h1>NEWSLETTER</h1>
-				<p>Sign up for sneak peeks and sales!</p>
-				<form class="form-search">
-  				<fieldset>
-    				<label>Enter your email address:</label>
-    				<input type="text" placeholder="Type something…">
-    				<button type="submit" class="btn">Submit</button>
-  				</fieldset>
-				</form>
+				<div ng-show="showEmailInput">
+					<p>Sign up for sneak peeks and sales!</p>
+					<form name="emailForm"class="form-search" novalidate>
+  					<fieldset>
+    					<label>Enter your email address:</label>
+    					<input type="email" placeholder="Type your email" ng-model="obj.email" required>
+    					<button class="btn" ng-click="submitEmail()" ng-disabled="emailForm.$invalid">Submit</button>
+  					</fieldset>
+					</form>
+				</div>
+				<div ng-hide="showEmailInput">
+					<p>Tanks for give us your e-mail!.</p>
+					<p>We will keep in touch, to let you know about our promotions and events.</p>
+				</div>
+				<p ng-show="repeatEmail" class="repeatEmail">This email is already submited :(</p>
 			</div>
 			<div class="span4">
-				<div class="fb-like" data-href="https://www.facebook.com/blacksunstorecr?fref=ts" data-width="300px" data-layout="standard" data-action="like" data-show-faces="true" data-colorscheme="dark"></div>
+				<div class="fb-like" data-href="https://www.facebook.com/blacksunstorecr" data-width="300px" data-layout="standard" data-action="like" data-show-faces="true" data-colorscheme="dark"></div>
 			</div>
 			<div class="span4 news-letter">
 				<h1>STALK US!</h1>
@@ -61,6 +68,11 @@
 		</div>
 		<div class="row">
 			<div class="span12 down"></div>
+				<div class="span12">
+					<a ng-click="openModal()">modal</a>
+				</div>
 		</div>
 	</div>
 </div>
+
+<modal template="views/modals/adminlogin.html" show="modal.show" modaldata="modal.data" callback="modal.callback" max-width="365px" max-height="290px"></modal>

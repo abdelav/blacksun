@@ -6,12 +6,46 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 @import "header";
 @import "mainPage";
 @import "footer";
+@import "modal";
+@import "mixin";
 
 /* Put your CSS here */
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
+}
+
+.overlay{
+	-webkit-transition : all  0.2s ease-in-out;
+	-moz-transition    : all  0.2s ease-in-out;
+  transition         : all  0.2s ease-in-out;
+	overflow   : hidden;
+	position   : absolute;
+  top        : 0;
+  left       : 0;
+  opacity    : 1; 
+  width      : 100%; 
+  height     : 100%; 
+  background : #fcfcfc;
+  z-index    : 9999;   
+  .center{
+  	margin  : 10% auto 0 auto;
+  	width   : 177px;
+  	height  : auto; 
+  	img:nth-child(2){
+  		margin : 10px 0 0 35px; 
+  	}  
+  }   
+}
+ 
+.overlay.ng-hide-add,
+.overlay.ng-hide-remove {
+  display:block!important;
+}
+ 
+.overlay.ng-hide{
+  opacity : 0;
 }
 
 .no-margin{
@@ -24,3 +58,4 @@ body {
 	margin-left : 0; 
 }*/
 	
+

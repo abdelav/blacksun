@@ -21,11 +21,214 @@
 	border     : solid 1px #f7ed34;
 	font-size  : 18px;
 	&:hover{
-		-webkit-transition : all 0.3s linear;
-    -moz-transition    : all 0.3s linear;
-    -o-transition      : all 0.3s linear;
-    transition         : all 0.3s linear;
-		background : rgba(0,0,0,1);
-		cursor     : pointer;
+		@include transition(0.4s linear);
+		background 				 : rgba(0,0,0,1);
+		cursor             : pointer;
 	}
 }
+.insta-parent{
+	.instaOverlay{
+		position   : absolute;
+		background : rgba(0,0,0,0.7);
+		opacity    : 0;
+		cursor     : pointer; 
+		img{
+			position    : absolute;
+   		top         : 50%;
+   		left        : 50%;
+   		width       : 48px;
+   		height      : 48px;
+   		margin-top  : -24px; /* Half the height */
+   		margin-left : -24px; /* Half the width */ 
+		}
+	}
+	&:hover{
+		.instaOverlay{
+			@include transition(0.6s linear);
+			opacity            : 1;
+		} 
+	}
+}
+
+.instaModal{
+	display          : block;
+	background-color : rgba(0,0,0,.7);
+	height           : 100%;
+	left             : 0px;
+	overflow         : hidden;
+	position         : fixed; /* important */
+	top              : 0px;
+	width            : 100%;
+  z-index          : 999;
+  margin-left      : 0px;
+  p{
+    @include transition(0.3s linear);
+    @include border-radius(50%);
+  	color         : #f7ed34;
+  	font-size     : 34px;
+  	font-weight   : 200;
+  	cursor        : pointer;
+  	float         : right;
+  	margin        : 10px 30px 0 0;
+    behavior      : url(PIE.htc); /* remove if you don't care about IE8 */
+    padding       : 14px;
+    border        : 2px solid #f7ed34;  
+    &:hover{
+    	@include transition(0.3s linear);
+    	@include rotate(90deg);
+  		color             : #fff;
+  		border-color      : #fff;
+
+    }
+  }
+  .modal-image{
+  	@include transition(0.5s linear);
+    transform         : translate(0px, 50px);
+	  -ms-transform     : translate(0px, 50px); /* IE 9 */
+	  -webkit-transform : translate(0px, 50px); /* Safari and Chrome */
+  	width       : 600px;
+   	height      : 600px;
+   	overflow    : hidden; 
+   	margin      : 0 auto; 
+   	img{
+   		width    : 100%;
+   		height   : 100%; 
+   		position : relative;  
+   	} 
+   	ul{
+			height         : 40px;
+			width          : 100%;
+			margin-top     : -50px;
+			position       : relative;
+			background     : rgba(0, 0, 0, .5); 
+			color          : #fff;
+			font-size      : 20px; 
+			font-weight    : 100;
+			letter-spacing : 2px; 
+			padding        : 14px 0 0 10px; 
+			i{
+				margin-top : 6px; 
+			}
+   	}
+   	.next-prev{
+   		margin-top : -330px;
+   		position   : absolute;
+   		background : none;
+   		padding    : 0; 
+   		li{
+   			background : rgba(0,0,0,.8); 
+   			padding    : 8px;
+   			cursor     : pointer;  
+   			&:hover{
+   				@include transition(0.5s ease-in-out);
+   				color : #f7ed34;
+   			}
+   		}
+   		:nth-child(2){
+				margin-left : 477px; 
+   		}  
+   	}
+  }
+}
+.instaModal{
+	@include transition(0.5s ease-in-out);
+	opacity : 1;
+}
+
+.instaModal.ng-hide-add,
+.instaModal.ng-hide-remove {
+  display:block!important;
+}
+ 
+.instaModal.ng-hide{
+  opacity : 0;
+  .modal-image{
+		@include transition(0.5s linear);
+    transform         : translate(0px,-600px);
+	  -ms-transform     : translate(0px,-600px); /* IE 9 */
+	  -webkit-transform : translate(0px,-600px); /* Safari and Chrome */
+	}
+}
+
+//ADMIN STYLES
+#uploadFile{
+	height : 26px;
+	border : solid 1px #cccccc; 
+	width  : 230px;
+}
+.fileUpload {
+	position : relative;
+	overflow : hidden;
+}
+.fileUpload input.upload {
+	position  : absolute;
+	top       : 0;
+	right     : 0;
+	margin    : 0;
+	padding   : 0;
+	font-size : 20px;
+	cursor    : pointer;
+	opacity   : 0;
+	filter    : alpha(opacity=0);
+}
+.input-xslarge{
+	width : 285px; 
+}
+.info-img{
+	margin-top : 15px; 
+	p{
+		span{
+			color : #468847;
+		}
+	}
+	b{
+		margin-right : 5px; 
+	} 
+}
+.preview-results{
+	margin-bottom : 20px; 
+}
+.messages{
+	.succ{
+		color : #468847;
+	}
+	.err{
+		color : red;
+	}
+}
+.slider-contpreview{
+	height     : 395px; 
+	overflow-x : hidden;
+	overflow-y : scroll;  
+	.parent{
+		.img-actions{
+			height     : 20px;
+			width      : 100%;
+			background : rgba(0,0,0,0.5); 
+			position   : absolute;
+			margin-top : -20px;    
+			opacity    : 0; 
+			li{ 
+				color  : #fff;
+				&:nth-child(2){
+					margin-left : 145px;
+					cursor      : pointer; 
+				}
+			}
+		}
+		&:hover{
+			.img-actions{
+				@include transition(0.5s linear);
+		  	opacity            : 1;
+			}
+		}
+	}
+}
+
+.line-black{
+	height     : 2px;
+	width      : 100%;
+	background : #333; 
+}
+
+

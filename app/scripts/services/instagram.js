@@ -26,6 +26,5 @@ angular.module('blacksunApp')
         });
         return defer.promise;
       }
-    
     };
   });

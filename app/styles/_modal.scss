@@ -1,0 +1,57 @@
+.modal-open { // modal-open class goes on <body> when the modal is open. This prevents body scroll.
+  //overflow : hidden;
+}
+.modal{
+	display          : block;
+	background-color : rgba(0,0,0,.5);
+	height           : 100%;
+	left             : 0px;
+	overflow         : hidden;
+	position         : fixed; /* important */
+	top              : 0px;
+	width            : 100%;
+  z-index          : 10000;
+  margin-left      : 0px;
+  .cont{
+  	margin-top : 10px;
+  	fieldset{
+  		margin-top : 15px; 
+  	}
+  }
+}
+.modal-head{
+	h1{
+		margin : 10px 0px 0px 10px; 
+	}
+}
+.modal-body{
+	margin : 0px 10px 0px 10px; 
+}
+.modal-large{
+	background-color   : white;
+	height             : 80%;
+	margin             : 5% auto 0 auto;
+	overflow           : hidden;
+  position           : relative;
+	width              : 80%;
+	-moz-box-shadow    : 0px 0px 15px  #000;
+  -webkit-box-shadow : 0px 0px 15px  #000;
+  box-shadow         : 0px 0px 15px  #000;
+}
+.modal-close {
+  cursor      : pointer;
+  float       : right;
+  font-weight : 700;
+  position    : relative;
+  margin      : -2px 5px 5px 5px;
+  z-index     : 3;
+}
+.css-form input.ng-invalid.ng-dirty {
+  background-color : #FA787E;
+}
+.css-form input.ng-valid.ng-dirty {
+  background-color : #78FA89;
+}
+.red{
+	color : red;
+}

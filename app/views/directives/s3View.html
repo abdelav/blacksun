@@ -1,0 +1,35 @@
+<div class="input-append">
+	<label>Select an image (.jpg or .png)</label>
+	<input id="uploadFile" placeholder="Choose File" disabled="disabled" ng-model="file.name"/>
+	<div class="fileUpload btn btn-inverse">
+    <span>Image</span>
+    <input id="file-chooser" type="file" class="upload" />
+	</div>
+</div>
+<label>Image reference (redirect link)</label>
+<input type="text" ng-model="imghref" class="input-xslarge">
+<div class="form-inline">
+	<label>Image name</label>
+	<input type="text" ng-model="imgName" class="nameInput">
+	<button id="upload-button" class="btn btn-inverse">Upload!</button>
+</div>
+<div class="info-img">
+	<p><b>Type:</b><span>{{file.type}}</span></p>
+	<p><b>Image size:</b><span ng-if="file.size">{{file.size}}B's</span></p>
+</div>
+<div class="messages">
+	<p><b>Status:</b>
+		<span ng-show="success" class="succ">Uploaded Successfully</span>
+		<span ng-show="iserror" class="err">Error</span>
+		<span ng-show="nothing" class="err">Please select a .jpg or .png file</span>
+	</p>
+</div>
+<div id="bar" class="progress progress-success progress-striped active">
+  <div class="bar" style="width : {{bar}};"></div>
+</div>
+<div class="preview-results">
+	<p>Preview Image</p>
+	<img ng-show="thereIs" ng-src="http://placekitten.com/{{imgwidth}}/{{imgheight}}" alt="preview">
+	<img id="blah" ng-if="previewIMG" ng-src="{{previewIMG}}" alt="your image" width="{{imgwidth}}" height="{{imgheight}}"/>	
+</div>
+

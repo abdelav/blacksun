@@ -1,0 +1,43 @@
+<div class="mainAdminPage">
+	<div class="row">
+		<div class="span12">
+			<h1>SLIDER IMAGES</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span8 float-left slider-contpreview">
+			<div masonry="{ transitionDuration: '0.6s' }">
+    		<div class="masonry-brick parent" ng-repeat="image in imgs">
+      		<img ng-src="{{image.url}}" alt="A masonry brick" width="300" height="100">
+      		<div class="img-actions">
+      			<ul class="inline">
+      				<li>{{image.name}}</li>
+      				<li ng-click="deleteImage(image)">Delete<i class="icon-trash icon-white"></i></li>
+      			</ul>
+      		</div>
+    		</div>
+  		</div>
+		</div>
+		<div class="span4 float-right">
+			<s3uploader 
+						template-url  = 'views/directives/s3View.html'
+						fbpath        = '/slider'
+						accesskey     = "AKIAIWOR3KNGZBKQJ3CA" 
+						secretkey     = "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" 
+						bucket        = "blaksun"
+						imgwidth      = "300"
+						imgheight     = "100"
+						imgsize       = "512000">
+			</s3uploader>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="span12 line-black"></div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<h1>ADVERTISEMENTS IMAGES</h1>
+		</div>
+	</div>
+</div>
+

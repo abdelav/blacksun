@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body ng-app="blacksunApp">
+  <body ng-app="blacksunApp" ng-controller="MotherCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -24,7 +24,12 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
+    <div class="overlay" ng-show="admin">
+        <div class="center">
+            <img src="images/logo.png" alt="">
+            <img src="images/preloader.GIF" alt="">
+        </div>
+    </div>
     <!-- Add your site or application content here -->
     <div ng-include="'views/partials/header.html'"></div>
     <div class="container" ng-view=""></div>
@@ -45,13 +50,17 @@
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_PI/all.js#xfbml=1&appId=650069098387415";
+        js.src = "//connect.facebook.net/en_PI/all.js#xfbml=1&appId=726579990685955";
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.0.0-rc5.min.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <!--<script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
@@ -75,6 +84,8 @@
         <script src="scripts/lib/masonry.pkgd.min.js"></script>
         <script src="scripts/lib/imagesloaded.pkgd.min.js"></script>
         <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <script src="bower_components/jquery-md5/jquery.md5.js"></script>
         <!-- endbuild -->
 
         <script src="scripts/lib/angular-tmpls.js"></script>
@@ -83,6 +94,13 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/instagram.js"></script>
+        <script src="scripts/services/FBURL.js"></script>
+        <script src="scripts/controllers/Mother.js"></script>
+        <script src="scripts/services/FBretrieves.js"></script>
+        <script src="scripts/controllers/mainPageAdmin.js"></script>
+        <script src="scripts/directives/s3Uploader.js"></script>
+        <script src="scripts/services/imagespad.js"></script>
+        <script src="scripts/directives/modal.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -1,10 +1,6 @@
 <carousel interval="myInterval">
   <slide ng-repeat="slide in slides" active="slide.active">
-    <img ng-src="{{slide.image}}" style="margin:auto;">
-      <div class="carousel-caption">
-      <h4>Slide {{$index}}</h4>
-      <p>{{slide.text}}</p>
-    </div>
+    <a href="#/"><img ng-src="{{slide.url}}" style="margin:auto;"></a>
   </slide>
 </carousel>
 
@@ -33,7 +29,7 @@
   </div> 
 </div>
 
-<div class="adds">
+<div class="adds-two">
   <div class="row">
    
   </div> 
@@ -41,9 +37,27 @@
 
 <div class="sale-adds">
   <div masonry="{ transitionDuration: '0.6s' }">
-    <div class="masonry-brick" ng-repeat="image in instagram_feed">
+    <div class="masonry-brick insta-parent" ng-repeat="image in instagram_feed">
       <img ng-src="{{image.image}}" alt="A masonry brick" width="{{image.imgWidth}}" height="{{image.imgHeight}}">
+      <div ng-click="imgeModal(image)" class="instaOverlay" style="width:{{image.imgWidth}}px;height:{{image.imgHeight}}px;margin-top:-{{image.imgHeight}}px;">
+        <img src="images/zoom-in-yellow.png" alt="">
+      </div>
     </div>
   </div>
   <div ng-click="loadImages()" class="loadmore">WATCH MORE OF OUR COOL PICS!</div>
+</div>
+
+<div class="instaModal" ng-show="instaModal">
+  <p ng-click="closeInstaModal()">X</p>
+  <div class="modal-image">
+    <img ng-src="{{highImage}}" alt="">
+    <ul class="inline next-prev">
+      <li ng-click="prevImg()">prev</li>
+      <li ng-click="nextImg()">next</li>
+    </ul>
+    <ul class="inline">
+      <li>{{likes}}<i class="icon-heart icon-white"></i></li>
+      <li>{{caption}}</li>
+    </ul>
+  </div>
 </div>

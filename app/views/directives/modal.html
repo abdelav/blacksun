@@ -1,0 +1,5 @@
+<div ng-show="show" class="modal">
+  <div style="min-width: {{ minWidth || '0%'}}; max-width: {{ maxWidth || '100%'}}; max-height: {{ maxHeight || '100%' }};" class="modal-large"><span ng-click="closeModal()" class="modal-close">x</span>
+    <div ng-include="template" class="modal-wrapper"></div>
+  </div>
+</div>
