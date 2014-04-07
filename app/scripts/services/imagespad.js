@@ -5,13 +5,21 @@ angular.module('blacksunApp')
 
     // Public API here
     return {
-      saveImge : function (path, imgUrl, imgName){
-        var images = $firebase(new Firebase(FBURL+'/'+path));
+      saveImge : function (path, imgUrl, imgName, urlRef){
+        var images  = $firebase(new Firebase(FBURL+'/'+path));
         var imageID = Math.random().toString(36).substr(2, 9);
+        var target  = '_blank'; 
+        if(urlRef === ''){
+          urlRef = '#/';
+          target = '_self';
+        }
+
         images.$add({
-          url  : imgUrl,
-          id   : imageID,
-          name : imgName
+          url   : imgUrl,
+          id    : imageID,
+          name  : imgName,
+          ref   : urlRef,
+          tar   : target
         });
       }
     };

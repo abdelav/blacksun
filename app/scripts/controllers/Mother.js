@@ -1,12 +1,31 @@
 'use strict';
 
 angular.module('blacksunApp')
-  .controller('MotherCtrl', function($scope, $rootScope, FBURL, $firebase, $location) {
+  .controller('MotherCtrl', function($scope, $rootScope, FBURL, $firebase, $location, languagesSwitch) {
     
   $scope.obj = [];
     
   $scope.showEmailInput = true;
   $scope.repeatEmail    = false;
+  $scope.i18n           = {};
+  //set english as default language
+  var countryCode = 'US';
+  var langList    = ['US', 'ES'];
+  var userLang    = navigator.language || navigator.userLanguage;
+  var upperLang   = userLang.toUpperCase();
+
+  if(upperLang != 'US'){
+    if(_.contains(langList, upperLang)){
+      countryCode = upperLang;
+    }
+    languagesSwitch.getLanguages(countryCode).then(function(data){       
+      $scope.i18n = data[countryCode];       
+    });
+  }else{
+    languagesSwitch.getLanguages(countryCode).then(function(data){       
+      $scope.i18n = data[countryCode];        
+    });
+  }
     
   $scope.emails = $firebase(new Firebase(FBURL+'/emails'));
 

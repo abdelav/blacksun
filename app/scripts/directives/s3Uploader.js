@@ -83,7 +83,7 @@ angular.module('blacksunApp')
                   
                   var imgUrl    = 'https://s3.amazonaws.com/blaksun/'+scope.imgName+'.'+xtension;
                   var imageName = scope.imgName+'.'+xtension;
-                  imagesPath.saveImge(scope.fbpath, imgUrl, imageName);
+                  imagesPath.saveImge(scope.fbpath, imgUrl, imageName, scope.imghref);
       				  }
                 scope.$apply();
       			  }).on('httpUploadProgress', function (progress) {

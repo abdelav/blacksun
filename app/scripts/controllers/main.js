@@ -33,6 +33,9 @@ angular.module('blacksunApp')
 
     $scope.closeInstaModal = function(){
       $scope.instaModal = false;
+      $scope.imgIndex   = 0;
+      countImg          = 0;
+      countImg2         = 0;
     };
 
     var countImg  = 0;
@@ -46,8 +49,6 @@ angular.module('blacksunApp')
       }else{
         $scope.imgIndex = _.indexOf($scope.instagram_feed, $scope.imgObj) + countImg;
       }
-      
-      console.log($scope.imgIndex);
 
       if($scope.imgIndex > $scope.instagram_feed.length - 1){
         $scope.instaModal = false; 
@@ -73,8 +74,6 @@ angular.module('blacksunApp')
         $scope.imgIndex2 = _.indexOf($scope.instagram_feed, $scope.imgObj) - countImg2;
       }
       
-      console.log($scope.imgIndex2);
-      
       if($scope.imgIndex2 < 0){
         $scope.instaModal = false; 
         countImg  = 0;
@@ -90,7 +89,6 @@ angular.module('blacksunApp')
       });
     };
 
-    //functions
     function instaMap(mapMe){
       var imgsCounter = 2;
       var maping      = _.map(mapMe.data, function(data_instagram){

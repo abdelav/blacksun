@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('blacksunApp', ['ngRoute','ui.bootstrap','wu.masonry','firebase','ngAnimate'])
-  .config(function ($routeProvider) {
+angular.module('blacksunApp', ['ngRoute','ngAnimate','ui.bootstrap','wu.masonry','firebase'])
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl : 'views/main.html',
@@ -26,7 +26,7 @@ angular.module('blacksunApp', ['ngRoute','ui.bootstrap','wu.masonry','firebase',
       .otherwise({
         redirectTo: '/'
       });
-  }).run(['$location','$rootScope','FBretrieves','FBURL','$window', function ($location, $rootScope, FBretrieves, FBURL, $window){
+  }]).run(['$location','$rootScope','FBretrieves','FBURL','$window', function ($location, $rootScope, FBretrieves, FBURL, $window){
     
     var eBody =  angular.element($window.document.body);
 

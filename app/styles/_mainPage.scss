@@ -106,8 +106,11 @@
 			font-weight    : 100;
 			letter-spacing : 2px; 
 			padding        : 14px 0 0 10px; 
-			i{
-				margin-top : 6px; 
+			.heart{
+				margin : -3px 0 0 -18px; 
+			}
+			ul{
+				background : none; 
 			}
    	}
    	.next-prev{

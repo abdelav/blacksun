@@ -20,7 +20,7 @@
 				} 
 			}
 			&:hover{
-				-webkit-transition   : all 0.3s linear;
+				-webkit-transition : all 0.3s linear;
     			-moz-transition    : all 0.3s linear;
     			-o-transition      : all 0.3s linear;
     			transition         : all 0.3s linear;
@@ -38,7 +38,7 @@
 			a{
 				color : black;
 				&:hover{
-					-webkit-transition : all 0.3s linear;
+				-webkit-transition : all 0.3s linear;
     			-moz-transition    : all 0.3s linear;
     			-o-transition      : all 0.3s linear;
     			transition         : all 0.3s linear;
@@ -51,6 +51,12 @@
 		}
 		.search-cart{
 			margin : 50px 0 0 50px; 
+			.add-on{
+				border-radius : 0; 
+			}
+			input{
+				border-radius : 0; 
+			}
 		}
 	}
 	.yellow-line{

@@ -1,6 +1,6 @@
 <carousel interval="myInterval">
   <slide ng-repeat="slide in slides" active="slide.active">
-    <a href="#/"><img ng-src="{{slide.url}}" style="margin:auto;"></a>
+    <a ng-href="{{slide.ref}}" target="{{slide.tar}}"><img ng-src="{{slide.url}}" style="margin:auto;"></a>
   </slide>
 </carousel>
 
@@ -56,7 +56,12 @@
       <li ng-click="nextImg()">next</li>
     </ul>
     <ul class="inline">
-      <li>{{likes}}<i class="icon-heart icon-white"></i></li>
+      <li> 
+        <ul class="inline">
+          <li>{{likes}}</li>
+          <li><img src="images/shape-heart-48.png" alt="" class="heart"></li>
+        </ul>
+      </li>
       <li>{{caption}}</li>
     </ul>
   </div>
